@@ -1,0 +1,10 @@
+language: python
+python: 3.4
+
+install:
+    - if [[ $TRAVIS_PYTHON_VERSION == "3.4" ]]; then pip install -r -U requirements.txt; fi
+
+script:
+     - if [[ $TRAVIS_PYTHON_VERSION == "3.4" ]]; then pylint $TRAVIS_BUILD_DIR/py3.py; python $TRAVIS_BUILD_DIR/py3.py;  fi
+     - /usr/bin/python $TRAVIS_BUILD_DIR/py27.py
+     -
